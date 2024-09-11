@@ -1,6 +1,11 @@
 from django.contrib import admin
+from django.contrib.admin import ModelAdmin
 
-from mainapp.models import Attendee, Event
+from mainapp.models import Attendee, Event, Organizer
+
+
+class CustomUserAdmin(ModelAdmin):
+    model = Organizer
 
 # Register your models here.
 class EventAdmin(admin.ModelAdmin):
@@ -12,3 +17,4 @@ class AttendeeAdmin(admin.ModelAdmin):
 
 admin.site.register(Event, EventAdmin)
 admin.site.register(Attendee, AttendeeAdmin)
+admin.site.register(Organizer, CustomUserAdmin)

@@ -1,0 +1,15 @@
+<table>
+  <thead>
+    <th>
+      <td>Event Name</td>
+    </th>
+  </thead>
+  <tbody>
+    {% for ev in all_events %}
+    <tr>
+      <td><a href="{% url 'singleEvent' ev.id }">{{ev.name}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+<table>
+
